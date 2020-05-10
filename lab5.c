@@ -303,4 +303,5 @@ int main(int argc, char* argv[])
 	{
 		Print(&Qarr[i]);
 	}
+	Clear(&Qarr[i]);
 }
