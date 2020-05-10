@@ -11,7 +11,7 @@
 
 	//input example:
 	//Ag5
-	//B5
+	//D5
 	//Am4
 
 
@@ -269,7 +269,7 @@ void Foo(int count, int repite_count)
 			case 'A':
 			{
 				Push(&Qarr[temp->n], temp->data);
-				printf_s("\nAdd operation executed <%c added to %d queue>", temp->data, temp->n);
+				printf_s("\n%c added to %d", temp->data, temp->n);
 				break;
 			}
 			case 'D':
@@ -281,7 +281,7 @@ void Foo(int count, int repite_count)
 				}
 				else
 				{
-					printf_s("\nDeleting operation executed <%c deleted from %d queue>", ch, temp->n);
+					printf_s("\n%c deleted from %d", ch, temp->n);
 				}
 				break;
 			}
@@ -295,7 +295,7 @@ int main(int argc, char* argv[])
 {
 	//input example:
 	//Ag5
-	//B5
+	//D5
 	//Am4
 	Foo(5,4);
 	printf_s("\n");
