@@ -1,0 +1,79 @@
+function cosh
+C
+/* cosh example */
+#include <stdio.h>      /* printf */
+#include <math.h>       /* cosh, log */
+
+int main ()
+{
+  double param, result;
+  param = log(2.0);
+  result = cosh (param);
+  printf ("The hyperbolic cosine of %f is %f.\n", param, result );
+  return 0;
+}
+###
+function cosh
+C++
+#include <iostream>
+#include <cmath>
+#include <cerrno>
+#include <cstring>
+#include <cfenv>
+ 
+#pragma STDC FENV_ACCESS ON
+int main()
+{
+    std::cout << "cosh(1) = " << std::cosh(1) << '\n'
+              << "cosh(-1) = " << std::cosh(-1) << '\n'
+              << "log(sinh(1)+cosh(1)=" << std::log(std::sinh(1)+std::cosh(1)) << '\n';
+    // special values
+    std::cout << "cosh(+0) = " << std::cosh(0.0) << '\n'
+              << "cosh(-0) = " << std::cosh(-0.0) << '\n';
+    // error handling
+    errno=0;
+    std::feclearexcept(FE_ALL_EXCEPT);
+    std::cout << "cosh(710.5) = " << std::cosh(710.5) << '\n';
+    if (errno == ERANGE)
+        std::cout << "    errno == ERANGE: " << std::strerror(errno) << '\n';
+    if (std::fetestexcept(FE_OVERFLOW))
+        std::cout << "    FE_OVERFLOW raised\n";
+}
+###
+function fprintf
+C
+/* fprintf example */
+#include <stdio.h>
+
+int main ()
+{
+   FILE * pFile;
+   int n;
+   char name [100];
+
+   pFile = fopen ("myfile.txt","w");
+   for (n=0 ; n<3 ; n++)
+   {
+     puts ("please, enter a name: ");
+     gets (name);
+     fprintf (pFile, "Name %d [%-10.10s]\n",n+1,name);
+   }
+   fclose (pFile);
+
+   return 0;
+}
+###
+function gets
+C
+/* gets example */
+#include <stdio.h>
+
+int main()
+{
+  char string [256];
+  printf ("Insert your full address: ");
+  gets (string);     // warning: unsafe (see fgets instead)
+  printf ("Your address is: %s\n",string);
+  return 0;
+}
+###

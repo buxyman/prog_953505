@@ -1,0 +1,22 @@
+function fprintf
+<cstdio>(stdio.h)
+23.04.2009
+C,C++
+Writes the C string pointed by format to the stream. If format includes format specifiers (subsequences beginning with %), the additional arguments following format are formatted and inserted in the resulting string replacing their respective specifiers.
+After the format parameter, the function expects at least as many additional arguments as specified by format.
+###
+function gets
+<cstdio>(stdio.h)
+25.09.2010
+C
+Reads characters from the standard input (stdin) and stores them as a C string into str until a newline character or the end-of-file is reached.
+The newline character, if found, is not copied into str.
+A terminating null character is automatically appended after the characters copied to str.
+Notice that gets is quite different from fgets: not only gets uses stdin as source, but it does not include the ending newline character in the resulting string and does not allow to specify a maximum size for str (which can lead to buffer overflows).
+###
+function cosh
+<cmath>(math.h)
+21.01.2012
+C,C++
+Returns the hyperbolic cosine of x.
+###
