@@ -1,0 +1,96 @@
+3 5 7 10224 The Beatles
+2 10319 11913 2 10319 11913 20 20 4 9685 9813 9813 9891 3955 Pink Floyd
+1 4004 1 4004 0 0 0 22361 King Crimson
+1 22380 1 22380 69 69 0 10319 2 8 5 1966 Revolver
+5 10224 9685 9770 9813 9849 3 Taxman
+6 T
+A
+X
+M
+A
+N
+Eleanor Rigby
+13 E
+L
+E
+A
+N
+O
+R
+
+R
+I
+G
+B
+Y
+Yellow Submarine
+6 Y
+E
+L
+L
+O
+W
+20 11913 2 9 26 1969 Abbey Road
+4 10224 9685 9813 9891 3 Come Together
+8 T
+O
+G
+E
+T
+H
+E
+R
+Something
+9 S
+O
+M
+E
+T
+H
+I
+N
+G
+Here Comes the Sun
+3 S
+U
+N
+200 4004 2 3 1 1973 The Dark Side of the Moon
+1 3955 3 Time
+4 T
+I
+M
+E
+The Great Gig In The Sky
+0 Money
+5 M
+O
+N
+E
+Y
+99 22380 2 10 10 1969 In the Court of the Crimson King
+1 22361 2 21st Century Schizoid Man
+3 M
+A
+N
+The Court of the Crimson King
+4 K
+I
+N
+G
+69 32498 3 5 12 2020 lol
+1 32469 2 first
+3 e
+e
+e
+second
+3 i
+i
+i
+90 9685 John Lennon
+0 0 0 0 9770 real Paul McCartney
+0 0 0 0 9813 George Harrison
+0 0 0 0 9849 Ringo Starr
+0 0 0 0 9891 fake Paul McCartney
+0 0 0 0 696969 Rastsislau Kayko
+0 2 10319 22380 0 411 32469 Dasha Kido
+1 32498 1 32498 0 0 
