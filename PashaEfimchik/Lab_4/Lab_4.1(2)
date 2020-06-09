@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	char str[50];
+	int i = 0;
+	bool flag;
+	printf("Введите строку: ");
+	gets_s(str);
+	flag = true;
+	while (str[i])
+	{
+		if (str[i] == ' ')
+			flag = true;
+		else
+		{
+			if (str[i] == ',' || str[i] == ':' || str[i] == ';')
+			{
+				printf("%c", str[i]);
+				flag = true;
+			}
+			else if (str[i] == '.' || str[i] == '!' || str[i] == '?')
+			{
+				str[i + 1] = str[i+1] - 32;
+				printf("%c", str[i]);
+				flag = true;
+			}
+			else
+			{
+				if (flag && i)
+					printf(" ");
+					printf("%c", str[i]);
+					flag = false;
+			}
+		}
+		i++;
+	}
+}

@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+void obratnoe(int f, int* mas, char* base, int s)
+{
+	int i = 0;
+	while (f != 0)
+	{
+		mas[i] = f % s;
+		i++;
+		f /= s;
+	}
+	for (i--; i >= 0; i--)
+	{
+		s = mas[i];
+		printf("%c", base[s]);
+	}
+
+}
+
+void add(int f, int* mas, char* base, int s)
+{
+	int i = 0;
+	while (f != 0)
+	{
+		mas[i] = f % s;
+		i++;
+		f /= s;
+	}
+	for (i--; i >= 0; i--)
+	{
+		s = mas[i];
+		printf("%c", base[s]);
+	}
+}
+
+int main()
+{
+	char base[] = {
+		'0','1','2','3','4','5','6','7','8','9',
+		'A','B','C','D','E','F' };
+	int mas[64];
+	int s = 0, des = 0;
+	printf("Enter 10-e chislo: ");
+	scanf_s("%d", &des);
+	printf("\n10-ya system: %d", des);
+	printf("\n8-ya system: ");
+	add(des, mas, base, 8);
+	printf("\n16-ya system: ");
+	add(des, mas, base, 16);
+	printf("\n\nSelect number system: ");
+	scanf_s("%d", &s);
+	printf("\nCalculation system - %d (%d): ", s, des);
+	add(des, mas, base, s);
+	printf("\nExist obratnoe chislo - (%d) : ", des);
+	obratnoe(des, mas, base, s);
+	printf("\n\n");
+
+	return 0;
+}
