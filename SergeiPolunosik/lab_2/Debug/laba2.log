@@ -1,0 +1,11 @@
+﻿  laba2.cpp
+C:\Users\Andrei\Desktop\labsC\laba2\laba2\laba2.cpp(13,29): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei\Desktop\labsC\laba2\laba2\laba2.cpp(18,23): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei\Desktop\labsC\laba2\laba2\laba2.cpp(23,48): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei\Desktop\labsC\laba2\laba2\laba2.cpp(28,11): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei\Desktop\labsC\laba2\laba2\laba2.cpp(60,65): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei\Desktop\labsC\laba2\laba2\laba2.cpp(77,11): warning C4473: 'scanf_s' : not enough arguments passed for format string
+C:\Users\Andrei\Desktop\labsC\laba2\laba2\laba2.cpp(77,11): message : placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+C:\Users\Andrei\Desktop\labsC\laba2\laba2\laba2.cpp(77,11): message : the missing variadic argument 2 is required by format string '%c'
+C:\Users\Andrei\Desktop\labsC\laba2\laba2\laba2.cpp(77,11): message : this argument is used as a buffer size
+  laba2.vcxproj -> C:\Users\Andrei\Desktop\labsC\laba2\Debug\laba2.exe
