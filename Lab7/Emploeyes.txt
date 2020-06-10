@@ -1,0 +1,17 @@
+4
+Bogomolov,Mihail,Alexey,99,8,20,hj3849202,3940393nskfi3,
+BSUIR, BNTU Lyceum
+Jun,500.00,119,5,1,
+
+Galuk,Maxim,Alexey,100,4,17,kj7895634,938484nskc3kvk4,
+BSUIR
+Jun,500.00,119,5,1,
+
+Isichenko,Egor,Danil,101,10,8,kt8392902,94583kjfj4bkf,
+BSUIR
+Jun,500.00,120,5,6,
+
+Lukashenko,Alexandr,Grigoriy,54,7,30,nm8493903,938bd2738n,
+GomelAgrarniy
+President,3000.00,94,8,30,
+
