@@ -1,0 +1,146 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <malloc.h>
+#include <string.h>
+
+#define fileName "Text.txt"
+
+typedef struct  Words {
+    char name[255];
+    int count;
+} Word;
+
+
+int mstrlen(const char str[]) {
+    int len = 0;
+    for (; str[len] != '\0'; len++);
+    return len;
+}
+
+
+int mstrcatc(char str[], const char c) {
+    int pos = mstrlen(str);
+    str[pos + 1] = '\0';
+    str[pos] = c;
+    return 1;
+}
+
+int mstrcats(char str[], const char str2[]) {
+    for (int i = 0; i < mstrlen(str2); i++) {
+        str[mstrlen(str) + 1] = '\0';
+        str[mstrlen(str)] = str2[i];
+    }
+    return 1;
+}
+
+
+int mstrcpy(int size, char str[], const char str2[]) {
+    if (size < mstrlen(str2) + 1) {
+        printf("%d %d", sizeof(str), mstrlen(str2));
+        return 0;
+    }
+
+    for (int i = 0; i < mstrlen(str2); i++)
+        str[i] = str2[i];
+    return 1;
+}
+
+char mstrcmp(char str[], const char str2[]) {
+    for (int i = 0; str[i] != '\0'; i++)
+        if (str[i] != str2[i])
+            return 0;
+    return 1;
+}
+
+
+char check(char word[]) {
+    if (word[0] == '\0') return 0;
+    for (int i = 0; i < mstrlen(word); i++)
+        if (!isalpha(word[i]))
+            return 0;
+    return 1;
+}
+
+void FindPopularWords(char* text) {
+    int sizeArray = 0;
+    mstrcatc(text, ' ');
+    char tempWord[100], longestWord[100], cnt = 0;
+    tempWord[0] = '\0';
+    longestWord[0] = '\0';
+
+    int cntWords = 0;
+    for (int i = 0; i < mstrlen(text); i++)
+        if (text[i] == ' ' || text[i] == '\n' || text[i] == '\t' || ispunct(text[i]))
+            cntWords++;
+
+    Word* words = (Word*)malloc((1) * sizeof(Word));
+    for (int i = 0; i < mstrlen(text); i++) {
+        if (text[i] == ' ' || text[i] == '\n' || text[i] == '\t' || ispunct(text[i])) {
+            if (check(tempWord) == 0) {
+                tempWord[0] = '\0';
+                continue;
+            }
+            char flag = 0;
+            for (int i = 0; i < sizeArray; i++)
+                if (mstrcmp(words[i].name, tempWord) == 1) {
+                    words[i].count++;
+                    flag = 1;
+                    break;
+                }
+
+
+            if (flag == 0) {
+                words = (Word*)realloc(words, (sizeArray + 1) * sizeof(Word));
+                mstrcpy(sizeof(words[sizeArray].name), words[sizeArray].name, tempWord);
+                words[sizeArray].count = 1;
+                sizeArray++;
+            }
+            tempWord[0] = '\0';
+        }
+        else {
+            mstrcatc(tempWord, text[i]);
+        }
+    }
+
+
+    struct Words tmp;
+
+
+    for (int i = 0; i < sizeArray - 1; i++) {
+        for (int j = 0; j < sizeArray - i - 1; j++) {
+            if (words[j].count < words[j + 1].count) {
+                tmp = words[j];
+                words[j] = words[j + 1];
+                words[j + 1] = tmp;
+            }
+        }
+    }
+
+
+    for (int i = 0; i < 20; i++)
+        printf("\nword - \"%s\"; repetitions - %d", words[i].name, words[i].count);
+
+    return longestWord;
+}
+
+void ReadFromFile(char* text) {
+    FILE* input = fopen(fileName, "r");
+    if (input == NULL) {
+        printf("Cannot open file");
+        return 0;
+    }
+    while (!feof(input)) {
+        char c;
+        fscanf(input, "%c", &c);
+        mstrcatc(text, c);
+    }
+}
+
+int main() {
+    char text[15555];
+    ReadFromFile(text);
+    printf("%s", text);
+    FindPopularWords(text);
+
+    return 0;
+}
